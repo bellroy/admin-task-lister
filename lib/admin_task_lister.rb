@@ -7,8 +7,10 @@ class AdminTaskLister
 protected
 
   def self.list_tasks_with_rake
-    puts "\e[36m\e[1mAdmin rake tasks available:\e[0m"
-    system('rake', '--silent', '--tasks', '^admin') if is_irb?
+    if is_irb?
+      puts "\e[36m\e[1mAdmin rake tasks available:\e[0m"
+      system('rake', '--silent', '--tasks', '^admin')
+    end
     true
   end
 
