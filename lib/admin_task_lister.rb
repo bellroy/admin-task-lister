@@ -15,7 +15,7 @@ protected
   end
 
   def self.is_irb?
-    $0 == 'irb'
+    $0 == 'irb' || $0 == 'script/rails'
   end
   
 end
